@@ -7,40 +7,40 @@ function generatePassword(){
     console.log('random char is: ', lowerCaseChar[randomInt]);
     function getRandomInt(max) {
         return Math.floor(Math.random() * max);
-    }
+    };
   
   var number = '1234567890';
   var randomNum = getRandomNum(number.length + 1);
   console.log('random num is: ', number[randomNum]);
   function getRandomNum(max) {
       return Math.floor(Math.random() * max);
-  }
+  };
 
   var specialChar= "!#$%&'()*+,-./:;<=>?@_`{|}~";
   var randomSpecialChar = getRandomSpecialChar(specialChar.length + 1);
   console.log('random special char is: ', specialChar[randomSpecialChar]);
   function getRandomSpecialChar(max) {
       return Math.floor(Math.random() * max);
-  }
+  };
 
   var capitalChar = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
   var randomCapitalChar = getRandomCapitalChar(capitalChar.length + 1);
   console.log('random capital char is: ', capitalChar[randomCapitalChar]);
   function getRandomCapitalChar(max) {
       return Math.floor(Math.random() * max);
-  }
+  };
 
-  // ask user how long should pawword be (and validate length)
+  // ask user how long should pawword be (and validate length) - this should be a function?
   var chooseLength = prompt("How many characters should your password be? Choose a number of at least 8 and no more than 128.");
-        if (!chooseLength || chooseLength === null) {
-      alert("Please fill in a number between 1 and ___");
-      return false;
-    } else if (chooseLength < 8 || chooseLength > 128) {
-      alert("Please choose a number of at least 8 and no more than 128.");
-      return false;
-    } else {
-    var passwordLength = parseInt(chooseLength);
-    };
+      if (!chooseLength || chooseLength === null) {
+        alert("Please fill in a number between 1 and ___");
+        return false;
+      } else if (chooseLength < 8 || chooseLength > 128) {
+        alert("Please choose a number of at least 8 and no more than 128.");
+        return false;
+      } else {
+        var passwordLength = parseInt(chooseLength);
+      };
   
   console.log("password should be " + passwordLength + " characters long.");
 
@@ -51,7 +51,7 @@ function generatePassword(){
       console.log("No, don't include numbers.");
     } else {
       
-      console.log("should include letters and numbers");
+      console.log("yes, include numbers.");
     };
   
 
@@ -69,16 +69,16 @@ function generatePassword(){
     console.log("No, don't include capitals.");
   } else {
     console.log("Yes, include capitals.");
-  } 
+  };
 
   //generate a random password from selected characters.
   if ((containNum && containSpecialChar) && containCap) {
-    window.alert("Your password is " + lowerCaseChar[randomInt] + 
+    return lowerCaseChar[randomInt] + 
       number[randomNum] + 
       specialChar[randomSpecialChar] + 
-      capitalChar[randomCapitalChar]);
-  }
-}
+      capitalChar[randomCapitalChar];
+  } //need to finish rest of If statment, but not sure how to call which arguments were ture/false and assign corresponding variables to it. 
+};
     
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
