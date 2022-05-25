@@ -16,7 +16,7 @@ function generatePassword(){
       return Math.floor(Math.random() * max);
   };
 
-  var specialChar= "!#$%&'()*+,-./:;<=>?@_`{|}~";
+  var specialChar= "!#$%&()*+,-./:;<=>?@_`~";
   var randomSpecialChar = getRandomSpecialChar(specialChar.length + 1);
   console.log('random special char is: ', specialChar[randomSpecialChar]);
   function getRandomSpecialChar(max) {
@@ -33,7 +33,7 @@ function generatePassword(){
   // ask user how long should pawword be (and validate length) - this should be a function?
   var chooseLength = prompt("How many characters should your password be? Choose a number of at least 8 and no more than 128.");
       if (!chooseLength || chooseLength === null) {
-        alert("Please fill in a number between 1 and ___");
+        alert("Please fill in a number between 1 and 128.");
         return false;
       } else if (chooseLength < 8 || chooseLength > 128) {
         alert("Please choose a number of at least 8 and no more than 128.");
@@ -64,7 +64,7 @@ function generatePassword(){
     };
 
   // should it contain capitals
-  var containCap = window.confirm ("Should your password capitals? Click 'OK' for yes or 'CANCEL' for no."); 
+  var containCap = window.confirm ("Should your password contain capitals? Click 'OK' for yes or 'CANCEL' for no."); 
   if (!containCap) {
     console.log("No, don't include capitals.");
   } else {
