@@ -30,6 +30,10 @@ function generatePassword(){
       return Math.floor(Math.random() * max);
   };
 
+  //generate a series of random characgters from arrays.
+
+
+
   // ask user how long should pawword be (and validate length) - this should be a function?
   var chooseLength = prompt("How many characters should your password be? Choose a number of at least 8 and no more than 128.");
       if (!chooseLength || chooseLength === null) {
@@ -71,13 +75,13 @@ function generatePassword(){
     console.log("Yes, include capitals.");
   };
 
-  //generate a random password from selected characters.
+  //recieve the chosen criteria from prompts and apply to generate password. Then generate random password.
   if ((containNum && containSpecialChar) && containCap) {
     return lowerCaseChar[randomInt] + 
       number[randomNum] + 
       specialChar[randomSpecialChar] + 
       capitalChar[randomCapitalChar];
-  } //need to finish rest of If statment, but not sure how to call which arguments were ture/false and assign corresponding variables to it. 
+  } //need to finish rest of If statment, but not sure how to call which arguments were ture/false and assign corresponding functions to it. 
 };
     
 // Get references to the #generate element
